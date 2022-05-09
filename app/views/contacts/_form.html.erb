@@ -10,6 +10,8 @@
       </ul>
     </div>
   <% end %>
+  
+      
   <div class="flex flex-wrap -mx-2 my-5 space-y-4 md:space-y-0">
     <div class="w-full px-2 md:w-1/2">
       <%= form.label :first_name %>
@@ -50,6 +52,17 @@
     <%= form.label :general_note %>
     <%= form.text_field :general_note, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", placeholder: "Sam is super fun!"  %>
   </div>
+  <div class="my-5">
+    <%= form.label :user_photo %>
+    <%= form.file_field :avatar, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", placeholder: "Sam is super fun!"  %>
+  </div>
+
+  <div class="my-5">
+    <% form.label :user_id %>
+    <%= form.number_field :user_id, id: :friend_user_id, value: current_user.inspect, type: "hidden", class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full"  %>
+  </div>
+
+  <%= current_user.inspect %>
 
   <div class="inline">
     <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
