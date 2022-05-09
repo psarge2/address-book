@@ -49,12 +49,14 @@
               <%= link_to "Add Contact", new_contact_path, class:"nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out" %>
             </li>
             <li class="nav-item">
-              <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class:"nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out" %>
+              <%= link_to "Sign Out", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" }, class:"nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out" %>
             </li>
             <li class="nav-item">
               <%= link_to "Edit Profile", edit_user_registration_path, class:"nav-link block pr-2 lg:px-2 py-2 text-gray-600 hover:text-gray-700 focus:text-gray-700 transition duration-150 ease-in-out" %>
             </li>
-
+            <li class="nav-item">
+            <%= button_to "Sign Out my account", destroy_user_session_path, data: { confirm: "Are you sure?" }, method: :delete, class: "w-full rounded-md py-1 px-2 bg-red-600 text-white inline-block font-small shadow-md" %>
+            </li>
             <% else %>
 
             <li class="nav-item">
